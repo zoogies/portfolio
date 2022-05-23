@@ -28,3 +28,18 @@ body{
 .slightshadow{
     box-shadow: 0px 2px 10px 1px #000000;
 }
+
+.slide{
+    animation-duration: .5s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      margin-top: 100%;
+    }
+  
+    to {
+      margin-top: 0%;
+    }
+  }

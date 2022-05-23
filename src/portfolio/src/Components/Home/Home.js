@@ -7,7 +7,7 @@ export default function Home(){
     return(
         <div>
             <NavBar/>
-            <div className="home_content">
+            <div className="home_content slide">
                 <div className="home_list">
                     <Button type="about"/>
                     <Button type="live"/>

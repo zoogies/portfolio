@@ -22,7 +22,7 @@ export default function Releases(){
     return(
         <div>
             <NavBar/>
-            <div className="releases_content">
+            <div className="releases_content slide">
                 <div className="releases_list">
                     {
                         Object.keys(releases).map((keyName, i) => (

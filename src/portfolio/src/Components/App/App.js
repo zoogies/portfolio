@@ -7,6 +7,7 @@ import {
 import Home from "../Home/Home";
 import Live from "../Live/Live";
 import Notfound from "../Notfound/Notfound";
+import Profile from "../Profile/Profile";
 import Releases from "../Releases/Releases";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/Releases" element={<Releases/>}/>
                 <Route path="/Live" element={<Live/>}/>
+                <Route path="/Profile" element={<Profile/>}/>
                 <Route path="*" element={<Notfound/>}/>
             </Routes>
         </Router>

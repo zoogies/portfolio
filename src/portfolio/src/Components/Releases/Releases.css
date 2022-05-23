@@ -23,22 +23,22 @@
     margin: 10px;
 }
 .release_top{
-    width: 90%;
     max-width: 500px;
     margin: 20px;
     margin-bottom: 0px;
     border-radius: 10px;
+    width: 90%;
 }
 .release_title{
     display: flex;
     flex-wrap: wrap;
 }
 .release_description{
+    max-width: 500px;
     margin: 10px;
 }
 
 .release_download{
-    margin: 30px;
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -57,7 +57,7 @@
 .release_info{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 .release_icon{
