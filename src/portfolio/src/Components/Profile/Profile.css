@@ -53,7 +53,55 @@
     align-items: center;
     padding: 5px;
     margin: 10px;
+    text-decoration: none;
+    color: inherit;
 }
 .profile_button_text{
     margin: 10px;
+}
+
+
+
+
+
+.profile_entry_top{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+.profile_entry_info{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+.profile_entry_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.profile_entry_title{
+    margin: 0px;
+}
+.profile_entry_button{
+    
+    text-decoration: none;
+    text-decoration: underline;
+    color: inherit;
+}
+.video{
+    max-width: 600px;
+    width: auto;
+}
+.showcase_image{
+    max-width: 600px;
+    max-height: 600px;
+}
+.showcase_double{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

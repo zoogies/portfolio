@@ -33,13 +33,13 @@ export default function Releases(){
                                 </div>
                                 <p className="release_description">{releases[keyName]['description']}</p>
                                 <div className="release_info">
-                                    <a className="release_download b4" href={releases[keyName]['download']}>
+                                    <a className="release_download b3 hvr-grow" href={releases[keyName]['download']}>
                                         <div className="release_icon">
                                             <AiOutlineDownload size={40} color={"white"} />
                                         </div>
                                         <h2 className="release_download_text">Download</h2>
                                     </a>
-                                    <a className="release_download b4" href={releases[keyName]['source']}>
+                                    <a className="release_download b3 hvr-grow" href={releases[keyName]['source']}>
                                         <div className="release_icon">
                                             <HiOutlineCode size={40} color={"white"} />
                                         </div>
