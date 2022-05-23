@@ -3,5 +3,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: start;
+    text-decoration: none;
+    color: inherit;
+    padding-left: 30px;
 }

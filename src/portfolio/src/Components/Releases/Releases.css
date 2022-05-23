@@ -1,0 +1,65 @@
+.releases_list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.releases_content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.release_header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.release_image{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+.release_top{
+    width: 90%;
+    max-width: 500px;
+    margin: 20px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+.release_title{
+    display: flex;
+    flex-wrap: wrap;
+}
+.release_description{
+    margin: 10px;
+}
+
+.release_download{
+    margin: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow:0px 0px 14px 0px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+.release_download_text{
+    margin: 10px;
+    margin-left: 0px;
+}
+
+.release_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.release_icon{
+    margin: 5px;
+}
