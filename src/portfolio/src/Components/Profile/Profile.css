@@ -18,6 +18,8 @@
     border-radius: 20px;
     justify-content: center;
     gap: 20px;
+    text-decoration: none;
+    color: inherit;
 }
 .profile_picture{
     border-radius: 50%;
@@ -32,4 +34,26 @@
 }
 .profile_name{
     margin: 0px;
+}
+.profile_github_label{
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+}
+.profile_buttons{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.profile_button{
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+}
+.profile_button_text{
+    margin: 10px;
 }

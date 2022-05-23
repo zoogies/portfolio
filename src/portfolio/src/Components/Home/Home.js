@@ -11,7 +11,6 @@ export default function Home(){
                 <div className="home_list">
                     <Button type="about"/>
                     <Button type="live"/>
-                    <Button type="timeline"/>
                     <Button type="releases"/>
                 </div>
             </div>

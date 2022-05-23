@@ -7,9 +7,9 @@ export default function Live(){
     const releases= {
         "Spotiguess":{
             "description":"A party web game where you guess who has streamed a song the most.",
-            "image":"https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-download-logo-30.png",
+            "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/768px-Spotify_logo_without_text.svg.png",
             "play":"http://spotiguess.zoogies.live",
-            "source":""
+            "source":"https://github.com/Yoyolick/spotiguess"
         }
     }
     return(
