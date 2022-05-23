@@ -1,0 +1,74 @@
+.about_top{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 30px;
+    width: 300px;
+    height: 100px;
+    border-radius: 20px;
+    align-items: center;
+    margin-bottom: 0px;
+    text-decoration: none;
+    color: inherit;
+}
+.about_picture_top{
+    width: 80px;
+    height: 80px;
+    border-radius:50%;
+    margin: 10px;
+}
+.about_text{
+    justify-self: center;
+    font-weight: 400;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.button_top{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 30px;
+    width: 300px;
+    height: 100px;
+    border-radius: 20px;
+    align-items: center;
+    margin-bottom: 0px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+.button_text{
+    justify-self: center;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+}
+.live_icon{
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    right: -8px;
+    top: -8px;
+}
+.live_icon.shadow {
+    box-shadow: 0px 0px 20px 1px #ff0000;
+}
+
+.button_icon{
+    margin: 20px;
+    margin-right: 0px;
+}
+.button_icon.box{
+    margin: 20px;
+    margin-right: 0px;
+    margin-left: 35px;
+}
+.button_text_icon{
+    justify-self: center;
+    font-weight: 400;
+    width: 100%;
+    margin-left: 30px;
+}

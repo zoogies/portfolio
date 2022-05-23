@@ -1,0 +1,9 @@
+.home_content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.home_list{
+    display: flex;
+    flex-direction: column;
+}
