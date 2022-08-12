@@ -2,7 +2,7 @@ FROM node:lts-alpine
 
 WORKDIR /usr/src/portfolio
 
-COPY package.json ./
+COPY src/portfolio/package.json ./
 RUN yarn install
 RUN yarn build
 
