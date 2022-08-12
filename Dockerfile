@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-WORKDIR /usr/src/portfolio
+WORKDIR /src/portfolio
 
 COPY src/portfolio/package.json ./
 RUN yarn install
