@@ -1,11 +1,11 @@
 FROM node:lts-alpine
 
-WORKDIR /src/portfolio
-
-COPY package.json ./
-RUN yarn install
-RUN yarn build
+WORKDIR /
 
 COPY . ./
+RUN cd src/portfolio && yarn install
+RUN cd src/portfolio && yarn build
 
-CMD ["serve","-s","src/portfolio/build","--listen 8580"]
+RUN npm install --global serve
+
+CMD ["serve","src/portfolio/build"]
