@@ -8,4 +8,4 @@ RUN cd src/portfolio && yarn build
 
 RUN npm install --global serve
 
-CMD ["serve","src/portfolio/build"]
+CMD ["serve","-s","src/portfolio/build"]
