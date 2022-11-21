@@ -1,14 +1,11 @@
-import NavBar from "../Navbar/Navbar";
 import "../../Resources/shared.css";
 import "./Profile.css";
 import GitHubCalendar from 'react-github-calendar';
 import {AiFillGithub,AiFillYoutube} from "react-icons/ai";
-import {BsFillKeyboardFill} from "react-icons/bs";
 
 export default function Profile(){
     return(
         <div>
-            <NavBar/>
             <div className="slide">
                 <div className="profile_width">
                     <div className="profile_content">
@@ -23,7 +20,7 @@ export default function Profile(){
                                         <AiFillGithub size={40} color={"white"} />
                                         <h2 className="profile_button_text">Github</h2>
                                     </a>
-                                    <a className="profile_button youtube shadow" href="https://www.youtube.com/channel/UClXF0mYeJPzSw6F28s22irA">
+                                    <a className="profile_button youtube shadow" href="https://www.youtube.com/@ryanzmuda">
                                         <AiFillYoutube size={40} color={"white"} />
                                         <h2 className="profile_button_text">Youtube</h2>
                                     </a>
