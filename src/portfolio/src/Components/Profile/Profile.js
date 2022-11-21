@@ -14,7 +14,6 @@ export default function Profile(){
                             <div className="profile_meta">
                                 <h1 className="profile_name">Ryan Zmuda</h1>
                                 <p>An 18 year old University of Dayton student developer.</p>
-                                <p>Contact information and much more project experience are documented within the links below.</p>
                                 <div className="profile_buttons">
                                     <a className="profile_button b1 shadow" href="https://github.com/Yoyolick">
                                         <AiFillGithub size={40} color={"white"} />
@@ -28,8 +27,8 @@ export default function Profile(){
                             </div>
                         </div>
                         <a className="profile_general_top b3 shadow" href="https://github.com/Yoyolick">
-                            <h2 className="profile_github_label">Github Activity:</h2>
-                            <GitHubCalendar username="yoyolick" color="#ffdd00"/>
+                            <h2 className="profile_github_label">Commit Activity:</h2>
+                            <GitHubCalendar username="yoyolick" color="lime"/>
                         </a>
 
                         <h1>Notable Projects:</h1>

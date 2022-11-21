@@ -2,60 +2,22 @@
     background-color: #000000;
 }
 .b2{
-    background-color: #212121;
+    background-color: #000000;
 }
 .b3{
-    background-color: #303030;
+    background-color: #000000;
 }
 .b4{
-    background-color: #424242;
+    background-color: #000000;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
 
 body{
-    background-color: #212121;
+    background-color: #000000;
     font-family: 'Roboto Flex', sans-serif;
     font-weight: 400;
     color: white;
     margin: 0px;
     overflow-x: hidden;
 }
-
-.shadow{
-    box-shadow: 0px 2px 20px 1px #000000;
-}
-
-.slightshadow{
-    box-shadow: 0px 2px 10px 1px #000000;
-}
-
-.slide{
-    animation-duration: .5s;
-    animation-name: slidein;
-}
-
-@keyframes slidein {
-    from {
-      margin-top: 100%;
-    }
-  
-    to {
-      margin-top: 0%;
-    }
-  }
-
-  .hvr-grow {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-  }
-  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
