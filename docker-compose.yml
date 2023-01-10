@@ -1,0 +1,10 @@
+version: '3'
+services:
+  bot:
+    image: ghcr.io/yoyolick/portfolio:main 
+    ports:
+      - 3000:3000
+    networks:
+      - nginx_default
+    
+    restart: unless-stopped
