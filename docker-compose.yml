@@ -1,6 +1,6 @@
 version: '3'
 services:
-  bot:
+  portfolio:
     image: ghcr.io/yoyolick/portfolio:main 
     ports:
       - 3000:3000
