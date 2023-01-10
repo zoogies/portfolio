@@ -3,9 +3,9 @@ FROM node:lts-alpine
 WORKDIR /
 
 COPY . ./
-RUN cd src/portfolio && yarn install
-RUN cd src/portfolio && yarn build
+RUN cd src && yarn install
+RUN cd src && yarn build
 
 RUN npm install --global serve
 
-CMD ["serve","-s","src/portfolio/build"]
+CMD ["serve","-s","src/build"]
