@@ -1,9 +1,9 @@
 import "../../Resources/shared.css";
 import "./Profile.css";
-import GitHubCalendar from 'react-github-calendar';
+import GitHubCalendar from 'react-ts-github-calendar';
 import {AiFillGithub,AiFillYoutube} from "react-icons/ai";
 
-export default function Profile(){
+export default function Main(){
     return(
         <div>
             <div className="slide">
@@ -28,7 +28,7 @@ export default function Profile(){
                         </div>
                         <a className="profile_general_top b3 shadow" href="https://github.com/Yoyolick">
                             <h2 className="profile_github_label">Commit Activity:</h2>
-                            <GitHubCalendar username="yoyolick" color="lime"/>
+                            <GitHubCalendar userName="yoyolick" global_stats={false}/>
                         </a>
 
                         <h1>Notable Projects:</h1>
