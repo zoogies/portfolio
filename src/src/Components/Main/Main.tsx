@@ -1,39 +1,38 @@
 import "../../Resources/shared.css";
 import "./Profile.css";
 import GitHubCalendar from 'react-ts-github-calendar';
-import {AiFillGithub,AiFillYoutube} from "react-icons/ai";
+import Button from "../Button/Button";
 
 export default function Main(){
     return(
-        <div>
+        <div className="b1">
             <div className="slide">
                 <div className="profile_width">
-                    <div className="profile_content">
-                        <div className="profile_general_top b3 shadow">
-                            <img className="profile_picture" alt="portrait" src={require("../../Resources/Images/portrait_square.jpeg")}/>
+                    <div className="profile_content b2 shadow">
+                        <div className="profile_general_top">
+                            <img className="profile_picture shadow" alt="portrait" src={require("../../Resources/Images/portrait_square.jpeg")}/>
                             <div className="profile_meta">
                                 <h1 className="profile_name">Ryan Zmuda</h1>
                                 <p>An 18 year old University of Dayton student developer.</p>
                                 <div className="profile_buttons">
-                                    <a className="profile_button b1 shadow" href="https://github.com/Yoyolick">
-                                        <AiFillGithub size={40} color={"white"} />
-                                        <h2 className="profile_button_text">Github</h2>
-                                    </a>
-                                    <a className="profile_button youtube shadow" href="https://www.youtube.com/@ryanzmuda">
-                                        <AiFillYoutube size={40} color={"white"} />
-                                        <h2 className="profile_button_text">Youtube</h2>
-                                    </a>
+                                    <Button name="youtube"/>
+                                
+                                    <Button name="github"/>
+
+                                    <Button name="resume"/>
+
+                                    <Button name="projects"/>
                                 </div>
                             </div>
                         </div>
-                        <a className="profile_general_top b3 shadow" href="https://github.com/Yoyolick">
+                        <a className="profile_general_top" href="https://github.com/Yoyolick">
                             <h2 className="profile_github_label">Commit Activity:</h2>
                             <GitHubCalendar userName="yoyolick" global_stats={false}/>
                         </a>
 
                         <h1>Notable Projects:</h1>
 
-                        <div className="profile_entry_top b3 shadow">
+                        <div className="profile_entry_top">
                             <div className="profile_entry_info">
                                 <h1 className="profile_entry_title">Spotiguess</h1>
                                 <p>A fullstack react flask app web game that utilizes spotify's Oath and API to provide a party game experience of guessing who has streamed a song the most.</p>
@@ -53,7 +52,7 @@ export default function Main(){
                             </div>
                         </div>
 
-                        <div className="profile_entry_top b3 shadow">
+                        <div className="profile_entry_top">
                             <div className="profile_entry_info">
                                 <h1 className="profile_entry_title">Film Fest</h1>
                                 <p>A fullstack react flask app video streaming site, meant to archive student films from a creative filmmaking class I took.</p>
@@ -68,7 +67,7 @@ export default function Main(){
                             </video>
                         </div>
 
-                        <div className="profile_entry_top b3 shadow">
+                        <div className="profile_entry_top">
                             <div className="profile_entry_info">
                                 <h1 className="profile_entry_title">hdhs.live</h1>
                                 <p>A vanilla JS social media site I created as an anonmymous message board for my high school, which may or may not have gotten me in trouble.</p>
@@ -84,7 +83,7 @@ export default function Main(){
                             </div>
                         </div>
 
-                        <div className="profile_entry_top b3 shadow">
+                        <div className="profile_entry_top">
                             <div className="profile_entry_info">
                                 <h1 className="profile_entry_title">TextToGcode</h1>
                                 <p>A python library that generates gcode files and data when given an alphanumeric input. Created so that I could translate math problem answers into CNC movement to solve math homework automatically.</p>
