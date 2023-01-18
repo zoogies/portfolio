@@ -2,6 +2,21 @@ import "../../Resources/shared.css";
 import "./Profile.css";
 import GitHubCalendar from 'react-ts-github-calendar';
 import Button from "../Button/Button";
+import Project from "../Project/Project";
+
+interface project {
+    title: string,
+    media: string,
+    mediatype: "video" | "image",
+    link: string,
+}
+
+let spotiguess: project = {
+    title:"Spotiguess",
+    media:"../../Resources/Images/Projects/spotiguessdemo.mp4",
+    mediatype: "video",
+    link: "https://github.com/Yoyolick/spotiguess"
+}
 
 export default function Main(){
     return(
@@ -13,26 +28,29 @@ export default function Main(){
                             <img className="profile_picture shadow" alt="portrait" src={require("../../Resources/Images/portrait_square.jpeg")}/>
                             <div className="profile_meta">
                                 <h1 className="profile_name">Ryan Zmuda</h1>
+                                {/* <p>he / him</p> */}
                                 <p>An 18 year old University of Dayton student developer.</p>
-                                <div className="profile_buttons">
-                                    <Button name="youtube"/>
-                                
+                                <div className="profile_buttons">            
                                     <Button name="github"/>
 
                                     <Button name="resume"/>
 
                                     <Button name="projects"/>
+
+                                    <Button name="youtube"/>
                                 </div>
                             </div>
                         </div>
-                        <a className="profile_general_top" href="https://github.com/Yoyolick">
+                        {/* <a className="profile_general_top" href="https://github.com/Yoyolick">
                             <h2 className="profile_github_label">Commit Activity:</h2>
                             <GitHubCalendar userName="yoyolick" global_stats={false}/>
-                        </a>
+                        </a> */}
+                        
+                        <h1 className="project-text">Notable Projects:</h1>
 
-                        <h1>Notable Projects:</h1>
+                        <Project obj={spotiguess}/>
 
-                        <div className="profile_entry_top">
+                        {/* <div className="profile_entry_top">
                             <div className="profile_entry_info">
                                 <h1 className="profile_entry_title">Spotiguess</h1>
                                 <p>A fullstack react flask app web game that utilizes spotify's Oath and API to provide a party game experience of guessing who has streamed a song the most.</p>
@@ -96,7 +114,7 @@ export default function Main(){
                             <div className="showcase_double">
                                 <img className="showcase_single_image" src="https://camo.githubusercontent.com/4c9d4170db9c7ad07e193d798deaeb3715c708836ea361ab605d341265f4725d/68747470733a2f2f692e696d6775722e636f6d2f476b38785467332e706e67" alt="project showcase"/>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
