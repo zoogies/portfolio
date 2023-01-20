@@ -1,6 +1,7 @@
 import {AiFillGithub,AiFillYoutube} from "react-icons/ai";
 import {IoDocumentTextSharp} from "react-icons/io5"
 import {FaArchive} from "react-icons/fa";
+import {IoMdOpen} from "react-icons/io";
 
 export default function Button(props: any){
     if(props.name === "youtube"){
@@ -37,9 +38,17 @@ export default function Button(props: any){
     }
     if(props.name === "source"){
         return(
-            <a className="profile_button b1 shadow hvr-float hvr-fade" href={props.source} target="_blank" rel="noreferrer">
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href={props.link} target="_blank" rel="noreferrer">
                 <AiFillGithub size={40} color={"white"} />
                 <h2 className="profile_button_text">Source</h2>
+            </a>
+        )
+    }
+    if(props.name === "visit"){
+        return(
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href={props.link} target="_blank" rel="noreferrer">
+                <IoMdOpen size={40} color={"white"} />
+                <h2 className="profile_button_text">Visit</h2>
             </a>
         )
     }

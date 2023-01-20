@@ -13,7 +13,10 @@ export default function Project(props:any){
                         <source src={props.obj.media} type="video/mp4"/>
                     </video>
                 </div>
-                <Button source={props.obj.source} name="source"/>
+                <div className="buttons">
+                    <Button link={props.obj.source} name="source"/>
+                    <Button link={props.obj.link} name="visit"/>
+                </div>
             </div>
         )
     }

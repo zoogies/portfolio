@@ -44,26 +44,6 @@
     width: 100%;
     text-align: center;
 }
-.profile_buttons{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-.profile_button{
-    border-radius: 15px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    margin: 10px;
-    text-decoration: none;
-    color: inherit;
-    width: 160px;
-}
-.profile_button_text{
-    margin: 10px;
-}
 
 
 

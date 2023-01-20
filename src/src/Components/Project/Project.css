@@ -25,3 +25,11 @@
   height: 100%;
   overflow: hidden;
 }
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

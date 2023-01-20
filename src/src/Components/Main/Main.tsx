@@ -3,13 +3,15 @@ import "./Main.css";
 import GitHubCalendar from 'react-ts-github-calendar';
 import Button from "../Button/Button";
 import Project from "../Project/Project";
-
+import "../Button/Button.css";
 interface project {
     title: string,
     media: string,
     mediatype: "video" | "image",
     source: string,
+    link: string,
     description: string,
+    tech: string[],
 }
 
 let spotiguess: project = {
@@ -17,7 +19,9 @@ let spotiguess: project = {
     media:require("../../Resources/Images/Projects/spotiguessdemo.mp4"),
     mediatype: "video",
     source: "https://github.com/Yoyolick/spotiguess",
-    description: "A fullstack react flask app web game that utilizes spotify's Oath and API to provide a party game experience of guessing who has streamed a song the most."
+    link: "https://zoogies.live/spotiguess",
+    description: "A fullstack react flask app web game that utilizes spotify's Oath and API to provide a party game experience of guessing who has streamed a song the most.",
+    tech: ["python","react","javascript"]
 }
 
 // get site version from package.json
