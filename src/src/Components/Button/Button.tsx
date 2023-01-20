@@ -5,7 +5,7 @@ import {FaArchive} from "react-icons/fa";
 export default function Button(props: any){
     if(props.name === "youtube"){
         return(
-            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://www.youtube.com/@ryanzmuda">
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://www.youtube.com/@ryanzmuda" target="_blank" rel="noreferrer">
                 <AiFillYoutube size={40} color={"white"} />
                 <h2 className="profile_button_text">Youtube</h2>
             </a>   
@@ -13,7 +13,7 @@ export default function Button(props: any){
     }
     if(props.name === "github"){
         return(
-            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://github.com/Yoyolick">
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://github.com/Yoyolick" target="_blank" rel="noreferrer">
                 <AiFillGithub size={40} color={"white"} />
                 <h2 className="profile_button_text">Github</h2>
             </a>
@@ -29,9 +29,17 @@ export default function Button(props: any){
     }
     if(props.name === "projects"){
         return(
-            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://zoogies.live">
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://zoogies.live" target="_blank" rel="noreferrer">
                 <FaArchive size={40} color={"white"} />
                 <h2 className="profile_button_text">Projects</h2>
+            </a>
+        )
+    }
+    if(props.name === "source"){
+        return(
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href={props.source} target="_blank" rel="noreferrer">
+                <AiFillGithub size={40} color={"white"} />
+                <h2 className="profile_button_text">Source</h2>
             </a>
         )
     }

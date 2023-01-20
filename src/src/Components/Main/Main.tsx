@@ -1,5 +1,5 @@
 import "../../Resources/shared.css";
-import "./Profile.css";
+import "./Main.css";
 import GitHubCalendar from 'react-ts-github-calendar';
 import Button from "../Button/Button";
 import Project from "../Project/Project";
@@ -8,15 +8,20 @@ interface project {
     title: string,
     media: string,
     mediatype: "video" | "image",
-    link: string,
+    source: string,
+    description: string,
 }
 
 let spotiguess: project = {
     title:"Spotiguess",
-    media:"../../Resources/Images/Projects/spotiguessdemo.mp4",
+    media:require("../../Resources/Images/Projects/spotiguessdemo.mp4"),
     mediatype: "video",
-    link: "https://github.com/Yoyolick/spotiguess"
+    source: "https://github.com/Yoyolick/spotiguess",
+    description: "A fullstack react flask app web game that utilizes spotify's Oath and API to provide a party game experience of guessing who has streamed a song the most."
 }
+
+// get site version from package.json
+let version = require("../../../package.json").version;
 
 export default function Main(){
     return(
@@ -50,26 +55,7 @@ export default function Main(){
 
                         <Project obj={spotiguess}/>
 
-                        {/* <div className="profile_entry_top">
-                            <div className="profile_entry_info">
-                                <h1 className="profile_entry_title">Spotiguess</h1>
-                                <p>A fullstack react flask app web game that utilizes spotify's Oath and API to provide a party game experience of guessing who has streamed a song the most.</p>
-                                <div className="profile_entry_buttons">
-                                    <a className="profile_entry_button hvr-grow" href="http://spotiguess.zoogies.live">
-                                        <h2>Play Now</h2>
-                                    </a>
-                                    <a className="profile_entry_button hvr-grow" href="https://github.com/Yoyolick/spotiguess">
-                                        <h2>Source Code</h2>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="video">
-                            <video className="shadow video_low" autoPlay={true} controls={true} muted={true} loop={true}>
-                                <source src={require("../../Resources/Images/Projects/spotiguessdemo.mp4")} type="video/mp4"/>
-                            </video>
-                            </div>
-                        </div>
-
+                        {/*
                         <div className="profile_entry_top">
                             <div className="profile_entry_info">
                                 <h1 className="profile_entry_title">Film Fest</h1>
@@ -118,6 +104,7 @@ export default function Main(){
                     </div>
                 </div>
             </div>
+            <p className="footertext">Portfolio Site v{version}</p>
         </div>
     )
 }

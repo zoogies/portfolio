@@ -10,6 +10,7 @@
     align-items: flex-start;
     margin: 10px;
     border-radius: 20px;
+    max-width: 1180px;
 }
 .profile_general_top{
     display: flex;
@@ -58,6 +59,7 @@
     margin: 10px;
     text-decoration: none;
     color: inherit;
+    width: 160px;
 }
 .profile_button_text{
     margin: 10px;
@@ -137,4 +139,12 @@ p{
 .project-text{
     margin: 5px;
     margin-left:40px;
+}
+
+.footertext{
+    text-align: center;
+    margin-bottom: 20px;
+}
+body{
+    background-color: #212121;
 }
