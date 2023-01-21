@@ -30,7 +30,24 @@ export default function Project(props:any){
     }
     else{
         return(
-            <p>uhhh</p>
+            <div className="b1 shadow project-top">
+                <h1>{props.obj.title}</h1>
+                <p>{props.obj.description}</p>
+                <div className="wrapper">
+                    <img className="shadow video" src={props.obj.media} alt="Project example"/>
+                </div>
+                <div className="buttons">
+                    <Button source={props.obj.source} link={props.obj.link} name="source"/>
+                    <Button source={props.obj.source} link={props.obj.link} name="visit"/>
+                </div>
+                <div className="buttons">
+                    {props.obj.tech.map(function(d:string){
+                        return (
+                            <Badge key={d} type={d} project={props.obj.title}/>
+                        )
+                    })} 
+                </div>
+            </div>
         )
     }
 }

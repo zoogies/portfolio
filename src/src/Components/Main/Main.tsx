@@ -31,7 +31,57 @@ let filmfest: project = {
     source: "https://github.com/Yoyolick/filmfest",
     link: "",
     description: "A fullstack react flask app video streaming site, meant to archive student films from a creative filmmaking class I took.",
-    tech: ["python","react","javascript"]
+    tech: ["python","react","javascript","sqlite"]
+}
+
+let hdhs: project = {
+    title:"hdhs.live",
+    media:require("../../Resources/Images/Projects/hdhs.jpeg"),
+    mediatype: "image",
+    source: "https://github.com/Yoyolick/hdhs.live",
+    link: "",
+    description: "A vanilla JS flask served anonymous message/image board created for students at my highschool.",
+    tech: ["python","javascript","sqlite"]
+}
+
+let mitsuri: project = {
+    title:"Mitsuri",
+    media:require("../../Resources/Images/Projects/mitsuri.png"),
+    mediatype: "image",
+    source: "https://github.com/Yoyolick/mitsuri",
+    link: "",
+    description: "A discordjs bot I maintain for a server with friends, uses a bunch of API for a combination of cool AI-powered commands.",
+    tech: ["javascript","docker"]
+}
+
+let hub: project = {
+    title:"zoogies.live",
+    media:require("../../Resources/Images/Projects/hub.png"),
+    mediatype: "image",
+    source: "https://github.com/Yoyolick/hub",
+    link: "https://zoogies.live",
+    description: "A website and API I maintain to host and control a multitude of different services. Acts as a central hub for all of my projects.",
+    tech: ["python","svelte","javascript","docker"]
+}
+
+let soulja: project = {
+    title:"Portable Emulation Console",
+    media:require("../../Resources/Images/Projects/soulja.jpg"),
+    mediatype: "image",
+    source: "",
+    link: "",
+    description: "A retropi and emulation station powered handheld console. Designed pcb as well as 3d printed case myself, and soldered and assembled all components together. Modified linux image to support various buttons and features.",
+    tech: ["soldering","3D printing"]
+}
+
+let texttogcode: project = {
+    title:"TextToGcode",
+    media:require("../../Resources/Images/Projects/texttogcode.png"),
+    mediatype: "image",
+    source: "https://github.com/Yoyolick/TextToGcode",
+    link: "https://pypi.org/project/TextToGcode/",
+    description: "A python library you can utilize to create custom gcode commands from a string. Intended to be used to engrave or draw text with cnc machines.",
+    tech: ["python"]
 }
 
 // get site version from package.json
@@ -49,6 +99,7 @@ export default function Main(){
                                 <h1 className="profile_name">Ryan Zmuda</h1>
                                 {/* <p>he / him</p> */}
                                 <p>An 18 year old University of Dayton student developer.</p>
+                                {/* turn this age into a float that updates very slowly but noticably darken the background on the text a little TODO */}
                                 <div className="profile_buttons">            
                                     <Button name="github"/>
 
@@ -68,54 +119,18 @@ export default function Main(){
                         <h1 className="project-text">Notable Projects:</h1>
 
                         <Project obj={spotiguess}/>
+
                         <Project obj={filmfest}/>
 
-                        {/*
-                        <div className="profile_entry_top">
-                            <div className="profile_entry_info">
-                                <h1 className="profile_entry_title">Film Fest</h1>
-                                <p></p>
-                                <div className="profile_entry_buttons">
-                                    <a className="profile_entry_button hvr-grow" href="https://github.com/Yoyolick/spotiguess">
-                                        <h2>Source Code</h2>
-                                    </a>
-                                </div>
-                            </div>
-                            <video className="shadow video" autoPlay={true} controls={true} muted={true} loop={true}>
-                                <source src={require("../../Resources/Images/Projects/filmfestdemo.mp4")} type="video/mp4"/>
-                            </video>
-                        </div>
+                        <Project obj={hub}/>
 
-                        <div className="profile_entry_top">
-                            <div className="profile_entry_info">
-                                <h1 className="profile_entry_title">hdhs.live</h1>
-                                <p>A vanilla JS social media site I created as an anonmymous message board for my high school, which may or may not have gotten me in trouble.</p>
-                                <div className="profile_entry_buttons">
-                                    <a className="profile_entry_button hvr-grow" href="https://github.com/Yoyolick/hdhs.live">
-                                        <h2>Source Code</h2>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="showcase_double">
-                                <img className="showcase_image" src={require("../../Resources/Images/Projects/hdhsexample.png")} alt="project showcase"/>
-                                <img className="showcase_image" src={require("../../Resources/Images/Projects/hdhsexample2.png")} alt="project showcase"/>
-                            </div>
-                        </div>
+                        <Project obj={mitsuri}/>
 
-                        <div className="profile_entry_top">
-                            <div className="profile_entry_info">
-                                <h1 className="profile_entry_title">TextToGcode</h1>
-                                <p>A python library that generates gcode files and data when given an alphanumeric input. Created so that I could translate math problem answers into CNC movement to solve math homework automatically.</p>
-                                <div className="profile_entry_buttons">
-                                    <a className="profile_entry_button hvr-grow" href="https://github.com/Yoyolick/texttogcode">
-                                        <h2>Source Code</h2>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="showcase_double">
-                                <img className="showcase_single_image" src="https://camo.githubusercontent.com/4c9d4170db9c7ad07e193d798deaeb3715c708836ea361ab605d341265f4725d/68747470733a2f2f692e696d6775722e636f6d2f476b38785467332e706e67" alt="project showcase"/>
-                            </div>
-                        </div> */}
+                        <Project obj={hdhs}/>
+
+                        <Project obj={soulja}/>
+
+                        <Project obj={texttogcode}/>
                     </div>
                 </div>
             </div>
