@@ -1,4 +1,5 @@
 import "../../Resources/shared.css";
+import Badge from "../Badge/Badge";
 import Button from "../Button/Button";
 import "./Project.css";
 
@@ -14,8 +15,15 @@ export default function Project(props:any){
                     </video>
                 </div>
                 <div className="buttons">
-                    <Button link={props.obj.source} name="source"/>
-                    <Button link={props.obj.link} name="visit"/>
+                    <Button source={props.obj.source} link={props.obj.link} name="source"/>
+                    <Button source={props.obj.source} link={props.obj.link} name="visit"/>
+                </div>
+                <div className="buttons">
+                    {props.obj.tech.map(function(d:string){
+                        return (
+                            <Badge key={d} type={d} project={props.obj.title}/>
+                        )
+                    })} 
                 </div>
             </div>
         )

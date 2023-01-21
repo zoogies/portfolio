@@ -38,20 +38,20 @@ export default function Button(props: any){
     }
     if(props.name === "source"){
         return(
-            <a className="profile_button b1 shadow hvr-float hvr-fade" href={props.link} target="_blank" rel="noreferrer">
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href={props.source} target="_blank" rel="noreferrer">
                 <AiFillGithub size={40} color={"white"} />
                 <h2 className="profile_button_text">Source</h2>
             </a>
         )
     }
-    if(props.name === "visit"){
+    if(props.name === "visit" && props.link.length > 0){
         return(
             <a className="profile_button b1 shadow hvr-float hvr-fade" href={props.link} target="_blank" rel="noreferrer">
                 <IoMdOpen size={40} color={"white"} />
                 <h2 className="profile_button_text">Visit</h2>
             </a>
         )
+    } else{
+        return(<></>)
     }
-
-    return(<p>error</p>)
 }

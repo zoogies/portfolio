@@ -21,6 +21,16 @@ let spotiguess: project = {
     source: "https://github.com/Yoyolick/spotiguess",
     link: "https://zoogies.live/spotiguess",
     description: "A fullstack react flask app web game that utilizes spotify's Oath and API to provide a party game experience of guessing who has streamed a song the most.",
+    tech: ["python","react","javascript","docker"]
+}
+
+let filmfest: project = {
+    title:"Filmfest",
+    media:require("../../Resources/Images/Projects/filmfestdemo.mp4"),
+    mediatype: "video",
+    source: "https://github.com/Yoyolick/filmfest",
+    link: "",
+    description: "A fullstack react flask app video streaming site, meant to archive student films from a creative filmmaking class I took.",
     tech: ["python","react","javascript"]
 }
 
@@ -58,12 +68,13 @@ export default function Main(){
                         <h1 className="project-text">Notable Projects:</h1>
 
                         <Project obj={spotiguess}/>
+                        <Project obj={filmfest}/>
 
                         {/*
                         <div className="profile_entry_top">
                             <div className="profile_entry_info">
                                 <h1 className="profile_entry_title">Film Fest</h1>
-                                <p>A fullstack react flask app video streaming site, meant to archive student films from a creative filmmaking class I took.</p>
+                                <p></p>
                                 <div className="profile_entry_buttons">
                                     <a className="profile_entry_button hvr-grow" href="https://github.com/Yoyolick/spotiguess">
                                         <h2>Source Code</h2>
