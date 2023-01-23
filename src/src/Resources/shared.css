@@ -60,3 +60,9 @@ body{
     background-color: #424242;
     color: white;
   }
+
+  .nolink{
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+  }

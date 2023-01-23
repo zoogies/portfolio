@@ -128,3 +128,10 @@ p{
 body{
     background-color: #212121;
 }
+
+.icontext{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}

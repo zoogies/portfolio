@@ -4,6 +4,8 @@ import GitHubCalendar from 'react-ts-github-calendar';
 import Button from "../Button/Button";
 import Project from "../Project/Project";
 import "../Button/Button.css";
+import { ImLocation2 } from "react-icons/im";
+import { MdEmail } from "react-icons/md";
 interface project {
     title: string,
     media: string,
@@ -99,6 +101,15 @@ export default function Main(){
                                 <h1 className="profile_name">Ryan Zmuda</h1>
                                 {/* <p>he / him</p> */}
                                 <p>An 18 year old University of Dayton student developer.</p>
+                                <div className="icontext">
+                                    <ImLocation2 size={25} color={"white"} />
+                                    <p>Dayton, OH</p>
+                                    
+                                </div>
+                                <div className="icontext">
+                                    <MdEmail size={25} color={"white"}/>
+                                    <a className="nolink" href="mailto:ryanzmuda@gmail.com">ryanzmuda@gmail.com</a>
+                                </div>
                                 {/* turn this age into a float that updates very slowly but noticably darken the background on the text a little TODO */}
                                 <div className="profile_buttons">            
                                     <Button name="github"/>

@@ -5,6 +5,7 @@ import { Tooltip } from 'react-tooltip'
 import {SiSvelte} from "react-icons/si";
 import {GiSolderingIron} from "react-icons/gi";
 import {AiFillPrinter} from "react-icons/ai";
+import {GoLocation} from "react-icons/go";
 
 export default function Badge(props:any){
     if(props.type === "python"){
@@ -72,6 +73,6 @@ export default function Badge(props:any){
         )
     }
     return(
-        <p>error</p>
+        <p>{props.type}</p>
     )
 }
