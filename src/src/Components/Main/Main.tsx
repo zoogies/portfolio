@@ -1,6 +1,5 @@
 import "../../Resources/shared.css";
 import "./Main.css";
-import GitHubCalendar from 'react-ts-github-calendar';
 import Button from "../Button/Button";
 import Project from "../Project/Project";
 import "../Button/Button.css";
@@ -96,7 +95,7 @@ export default function Main(){
                 <div className="profile_width">
                     <div className="profile_content b2 shadow">
                         <div className="profile_general_top">
-                            <img className="profile_picture shadow" alt="portrait" src={require("../../Resources/Images/portrait_square.jpeg")}/>
+                            <img className="profile_picture shadow" alt="portrait" src={require("../../Resources/Images/portrait_square_min.jpeg")}/>
                             <div className="profile_meta">
                                 <h1 className="profile_name">Ryan Zmuda</h1>
                                 {/* <p>he / him</p> */}
