@@ -99,7 +99,7 @@ export default function Main(){
                             <div className="profile_meta">
                                 <h1 className="profile_name">Ryan Zmuda</h1>
                                 {/* <p>he / him</p> */}
-                                <p>An 18 year old University of Dayton student developer.</p>
+                                <p>A 19 year old University of Dayton student developer.</p>
                                 <div className="icontext">
                                     <ImLocation2 size={25} color={"white"} />
                                     <p>Dayton, OH</p>
