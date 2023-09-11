@@ -135,3 +135,8 @@ body{
     flex-wrap: nowrap;
     align-items: center;
 }
+
+.slight-grayed-text {
+    color: #b0b0b0;
+    margin-right: 30px;
+}

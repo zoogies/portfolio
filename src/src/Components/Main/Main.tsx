@@ -15,6 +15,16 @@ interface project {
     tech: string[],
 }
 
+let engine: project = {
+    title:"2D Game Engine (Work in progress)",
+    media:require("../../Resources/Images/Projects/engine.mp4"),
+    mediatype: "video",
+    source: "https://github.com/Yoyolick/yoyoengine",
+    link: "",
+    description: "A work in progress 2D game engine written in C. Utilizes SDL2 for graphics and input, as well as Nuklear for immediate mode gui. Employs the Entity Component System desing pattern.",
+    tech: ["c", "git"]
+}
+
 let spotiguess: project = {
     title:"Spotiguess",
     media:require("../../Resources/Images/Projects/spotiguessdemo.mp4"),
@@ -22,7 +32,7 @@ let spotiguess: project = {
     source: "https://github.com/Yoyolick/spotiguess",
     link: "https://zoogies.live/spotiguess",
     description: "A fullstack react flask app web game that utilizes spotify's Oath and API to provide a party game experience of guessing who has streamed a song the most.",
-    tech: ["python","react","javascript","docker"]
+    tech: ["python","react","javascript","docker","git"]
 }
 
 let filmfest: project = {
@@ -32,7 +42,7 @@ let filmfest: project = {
     source: "https://github.com/Yoyolick/filmfest",
     link: "",
     description: "A fullstack react flask app video streaming site, meant to archive student films from a creative filmmaking class I took.",
-    tech: ["python","react","javascript","sqlite"]
+    tech: ["python","react","javascript","sqlite","git"]
 }
 
 let hdhs: project = {
@@ -42,7 +52,7 @@ let hdhs: project = {
     source: "https://github.com/Yoyolick/hdhs.live",
     link: "",
     description: "A vanilla JS flask served anonymous message/image board created for students at my highschool.",
-    tech: ["python","javascript","sqlite"]
+    tech: ["python","javascript","sqlite","git"]
 }
 
 let mitsuri: project = {
@@ -52,7 +62,7 @@ let mitsuri: project = {
     source: "https://github.com/Yoyolick/mitsuri",
     link: "",
     description: "A discordjs bot I maintain for a server with friends, uses a bunch of API for a combination of cool AI-powered commands.",
-    tech: ["javascript","docker"]
+    tech: ["javascript","docker","git"]
 }
 
 let hub: project = {
@@ -62,7 +72,7 @@ let hub: project = {
     source: "https://github.com/Yoyolick/hub",
     link: "https://zoogies.live",
     description: "A website and API I maintain to host and control a multitude of different services. Acts as a central hub for all of my projects.",
-    tech: ["python","svelte","javascript","docker"]
+    tech: ["python","svelte","javascript","docker","git"]
 }
 
 let soulja: project = {
@@ -81,8 +91,8 @@ let texttogcode: project = {
     mediatype: "image",
     source: "https://github.com/Yoyolick/TextToGcode",
     link: "https://pypi.org/project/TextToGcode/",
-    description: "A python library you can utilize to create custom gcode commands from a string. Intended to be used to engrave or draw text with cnc machines.",
-    tech: ["python"]
+    description: "A python library with over 12,000 downloads that you can utilize to create custom gcode commands from a string. Intended to be used to engrave or draw text with cnc machines.",
+    tech: ["python","git","pypi"]
 }
 
 // get site version from package.json
@@ -127,6 +137,9 @@ export default function Main(){
                         </a> */}
                         
                         <h1 className="project-text">Notable Projects:</h1>
+                        <p className="project-text slight-grayed-text">For work experience, please refer to my resume above</p>
+
+                        <Project obj={engine}/>
 
                         <Project obj={spotiguess}/>
 

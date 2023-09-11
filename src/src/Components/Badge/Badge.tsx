@@ -5,6 +5,8 @@ import { Tooltip } from 'react-tooltip'
 import {SiSvelte} from "react-icons/si";
 import {GiSolderingIron} from "react-icons/gi";
 import {AiFillPrinter} from "react-icons/ai";
+import {SiPypi} from "react-icons/si";
+import { FaCuttlefish, FaGitAlt } from "react-icons/fa";
 
 export default function Badge(props:any){
     if(props.type === "python"){
@@ -67,6 +69,30 @@ export default function Badge(props:any){
         return(
             <>
             <AiFillPrinter id={props.project + "_" + props.type} className="badge hvr-float" size={30} color={"white"} />
+            <Tooltip anchorId={props.project + "_" + props.type} content={props.type} place="bottom" style={{ backgroundColor: "#636262"}}/>
+            </>
+        )
+    }
+    if(props.type === "c"){
+        return(
+            <>
+            <FaCuttlefish id={props.project + "_" + props.type} className="badge hvr-float" size={30} color={"white"} />
+            <Tooltip anchorId={props.project + "_" + props.type} content={props.type} place="bottom" style={{ backgroundColor: "#636262"}}/>
+            </>
+        )
+    }
+    if(props.type === "git"){
+        return(
+            <>
+            <FaGitAlt id={props.project + "_" + props.type} className="badge hvr-float" size={30} color={"white"} />
+            <Tooltip anchorId={props.project + "_" + props.type} content={props.type} place="bottom" style={{ backgroundColor: "#636262"}}/>
+            </>
+        )
+    }
+    if(props.type === "pypi"){
+        return(
+            <>
+            <SiPypi id={props.project + "_" + props.type} className="badge hvr-float" size={30} color={"white"} />
             <Tooltip anchorId={props.project + "_" + props.type} content={props.type} place="bottom" style={{ backgroundColor: "#636262"}}/>
             </>
         )

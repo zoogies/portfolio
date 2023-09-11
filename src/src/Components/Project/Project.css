@@ -5,11 +5,13 @@
     display: flex;
     flex-direction: column;
 }
+
 .project-top > h1{
     margin: 5px;
 }
 .project-top > p{
     margin: 5px;
+    margin-bottom: 15px;
 }
 
 .video {
