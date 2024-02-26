@@ -14,7 +14,7 @@ export default function Button(props: any){
     }
     if(props.name === "github"){
         return(
-            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://github.com/Yoyolick" target="_blank" rel="noreferrer">
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://github.com/zoogies" target="_blank" rel="noreferrer">
                 <AiFillGithub size={40} color={"white"} />
                 <h2 className="profile_button_text">Github</h2>
             </a>
