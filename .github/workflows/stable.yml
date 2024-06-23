@@ -49,4 +49,4 @@ jobs:
           docker buildx build --push \
           --tag $IMAGE_ID:main \
           --provenance=false \
-          --platform linux/arm64/v8 .
+          --platform linux/amd64 .
