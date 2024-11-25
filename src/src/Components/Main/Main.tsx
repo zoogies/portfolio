@@ -5,6 +5,8 @@ import Project from "../Project/Project";
 import "../Button/Button.css";
 import { ImLocation2 } from "react-icons/im";
 import { MdEmail } from "react-icons/md";
+import { IoIosBusiness } from "react-icons/io";
+
 interface project {
     title: string,
     media: string,
@@ -16,12 +18,12 @@ interface project {
 }
 
 let engine: project = {
-    title:"2D Game Engine (Work in progress)",
-    media:require("../../Resources/Images/Projects/engine.mp4"),
-    mediatype: "video",
-    source: "https://github.com/zoogies/yoyoengine",
+    title:"YoyoEngine - A Hackable 2D Game Engine",
+    media:require("../../Resources/Images/Projects/yoyoengine.png"),
+    mediatype: "image",
+    source: "https://github.com/yoyoengine",
     link: "",
-    description: "A work in progress 2D game engine written in C. Utilizes SDL2 for graphics and input, as well as Nuklear for immediate mode gui. Employs the Entity Component System desing pattern.",
+    description: "An in-development 2D game engine and editor written in C. Fully custom ECS, physics, and Lua Scripting. Cross platform builds between Windows, Linux, and Web Assembly.",
     tech: ["c", "git"]
 }
 
@@ -91,7 +93,7 @@ let texttogcode: project = {
     mediatype: "image",
     source: "https://github.com/zoogies/TextToGcode",
     link: "https://pypi.org/project/TextToGcode/",
-    description: "A python library with over 12,000 downloads that you can utilize to create custom gcode commands from a string. Intended to be used to engrave or draw text with cnc machines.",
+    description: "A python library with over 17,000 downloads that you can utilize to create custom gcode commands from a string. Intended to be used to engrave or draw text with cnc machines.",
     tech: ["python","git","pypi"]
 }
 
@@ -109,16 +111,22 @@ export default function Main(){
                             <div className="profile_meta">
                                 <h1 className="profile_name">Ryan Zmuda</h1>
                                 {/* <p>he / him</p> */}
-                                <p>A 20 year old University of Dayton student developer.</p>
+                                <p>A 20 year old cybersecurity researcher and University of Dayton Compuer Science undergrad.</p>
                                 <div className="icontext">
                                     <ImLocation2 size={25} color={"white"} />
-                                    <p>Dayton, OH</p>
-                                    
+                                    <p>Dayton, OH</p>                                    
                                 </div>
+
+                                <div className="icontext">
+                                    <IoIosBusiness size={25} color={"white"}/>
+                                    <p>Riverside Research Institute</p>
+                                </div>
+
                                 <div className="icontext">
                                     <MdEmail size={25} color={"white"}/>
                                     <a className="nolink" href="mailto:ryanzmuda@gmail.com">ryanzmuda@gmail.com</a>
                                 </div>
+
                                 {/* turn this age into a float that updates very slowly but noticably darken the background on the text a little TODO */}
                                 <div className="profile_buttons">            
                                     <Button name="github"/>
@@ -141,6 +149,10 @@ export default function Main(){
 
                         <Project obj={engine}/>
 
+                        <Project obj={soulja}/>
+
+                        <Project obj={texttogcode}/>
+
                         <Project obj={spotiguess}/>
 
                         <Project obj={filmfest}/>
@@ -151,9 +163,6 @@ export default function Main(){
 
                         <Project obj={hdhs}/>
 
-                        <Project obj={soulja}/>
-
-                        <Project obj={texttogcode}/>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import {IoMdOpen} from "react-icons/io";
 export default function Button(props: any){
     if(props.name === "youtube"){
         return(
-            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://www.youtube.com/@ryanzmuda" target="_blank" rel="noreferrer">
+            <a className="profile_button b1 shadow hvr-float hvr-fade" href="https://www.youtube.com/@realzoogies" target="_blank" rel="noreferrer">
                 <AiFillYoutube size={40} color={"white"} />
                 <h2 className="profile_button_text">Youtube</h2>
             </a>   
