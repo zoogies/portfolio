@@ -102,14 +102,14 @@ p {
     color: #eeeeee;
 }
 
-/* Links */
+/* Links — cyan sampled from the shirt graphic in the headshot */
 a {
-    color: #d97c3a;
+    color: #1ba8b5;
     text-decoration: underline;
 }
 
 a:hover {
-    color: #e8944e;
+    color: #35c6d4;
 }
 
 /* Lists */
@@ -135,6 +135,13 @@ li {
 
 .publication em {
     color: #cccccc;
+}
+
+.publication-description {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 8px 0 6px;
 }
 
 .publication a {
@@ -288,6 +295,17 @@ footer {
 }
 
 /* Blog post page */
+
+/* Tighter gap between the back link and the post title than the site header */
+.post-header {
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+}
+
+.post-header .back-link {
+    margin-bottom: 0;
+}
+
 .back-link a {
     color: #888888;
     text-decoration: none;
@@ -309,6 +327,24 @@ footer {
     color: #888888;
     font-size: 0.9rem;
     margin-bottom: 30px;
+}
+
+/* Date and byline stack on their own lines at the same size */
+.post-meta p {
+    margin-bottom: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: 1.5;
+}
+
+.post-byline a {
+    color: #888888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-byline a:hover {
+    color: #dddddd;
 }
 
 .post-content h2 {
@@ -340,6 +376,77 @@ footer {
     padding: 1px 5px;
     border-radius: 3px;
 }
+
+/* ------------------------------------------------------------------ *
+ * Post media and manual spacing annotations
+ *
+ * Write these directly in the markdown — raw HTML passes through.
+ *
+ *   <figure class="post-figure w-md">
+ *     <img src="../media/thing.png" alt="Describe the image">
+ *     <figcaption>Caption shown in gray under the image.</figcaption>
+ *   </figure>
+ *
+ * Widths:  w-xs 240 | w-sm 320 | w-md 480 | w-lg 640 | (omit = full width)
+ * Spacing: space-tight | space-sm | space-md | space-lg
+ *          add to any figure, paragraph, or block to change the gap
+ *          above and below it. Also works on markdown paragraphs via
+ *          attr_list, e.g. a paragraph followed by a line: {: .space-lg }
+ * ------------------------------------------------------------------ */
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #222222;
+    border-radius: 6px;
+}
+
+.post-figure {
+    margin: 32px auto;
+}
+
+.post-figure img {
+    margin: 0 auto;
+}
+
+.post-content figcaption {
+    margin-top: 10px;
+    color: #8c8c8c;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Width constraints — apply to a figure, or straight to an image */
+.w-xs { max-width: 240px; }
+.w-sm { max-width: 320px; }
+.w-md { max-width: 480px; }
+.w-lg { max-width: 640px; }
+
+/* Embedded posts (X/Twitter widget renders into this blockquote) */
+.post-content .twitter-tweet {
+    margin: 32px auto;
+}
+
+.post-content blockquote:not(.twitter-tweet) {
+    margin: 0 0 20px;
+    padding-left: 16px;
+    border-left: 2px solid #333333;
+    color: #cccccc;
+}
+
+/* Vertical spacing utilities. Listed last so they win ties against the
+   base rules above. */
+.space-tight { margin-top: 12px;  margin-bottom: 12px; }
+.space-sm    { margin-top: 24px;  margin-bottom: 24px; }
+.space-md    { margin-top: 40px;  margin-bottom: 40px; }
+.space-lg    { margin-top: 64px;  margin-bottom: 64px; }
 
 /* Override highlight.js theme background to match site */
 .hljs {

@@ -6,15 +6,18 @@
     <meta name="darkreader-lock">
     <meta name="color-scheme" content="dark">
     <title>Ryan Zmuda</title>
+    <meta name="theme-color" content="#1ba8b5">
+    <meta property="og:site_name" content="zmuda.dev">
     <meta property="og:title" content="Ryan Zmuda">
     <meta property="og:description" content="CS PhD student at Dartmouth. Researcher in systems security, CI/CD, and game development.">
-    <meta property="og:image" content="https://zmuda.dev/media/headshot.png">
+    <meta property="og:image" content="https://zmuda.dev/media/headshot.jpg">
+    <meta property="og:image:alt" content="Ryan Zmuda">
     <meta property="og:url" content="https://zmuda.dev">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
-    <link rel="icon" type="image/png" sizes="32x32" href="media/headshot.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="media/headshot.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="media/headshot.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/headshot.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/headshot.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/headshot.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,10 +38,10 @@
     <div class="container">
         <header>
             <div class="header-content">
-                <img src="media/headshot.png" alt="Ryan Zmuda" class="headshot">
+                <img src="media/headshot.jpg" alt="Ryan Zmuda" class="headshot">
                 <div class="header-text">
                     <h1>Ryan Zmuda</h1>
-                    <span id="age-display">21</span> year old researcher and computer scientist. <br> I love computer security and gamedev.
+                    <span id="age-display">21</span> year old researcher and computer scientist. <br> I love computer security, anti-cheat, and gamedev.
                 </div>
             </div>
         </header>
@@ -70,6 +73,18 @@
                     University of Dayton Brother Joseph W. Stander Symposium, 22 April 2026.<br>
                     [<a href="media/SECC_Standers_Poster.pdf">PDF</a>]
                     <!-- [<a href="#">BibTeX</a>] -->
+                </div>
+            </section>
+
+            <section id="talks">
+                <h2>Talks</h2>
+                <div class="publication">
+                    <strong>Your Lives are in Another Struct: Breaking Memory Hacks with Field Relocation</strong><br>
+                    <em>Ryan "Zoogies" Zmuda</em><br>
+                    DEF CON 34, 2026
+                    <p class="publication-description">Undergrad capstone project @udayton sponsored by Blizzard. A compile-time ILPP pass that relocates fields between co-lifetimed Unity DOTS components, breaking the stable struct offsets that AOB scanners and memory cheats depend on.</p>
+                    [<a href="https://github.com/zoogies/struct-entropy/blob/main/DC34%20-%20Struct%20Entropy.pdf">Slides</a>]
+                    [<a href="https://github.com/zoogies/struct-entropy">Source</a>]
                 </div>
             </section>
 
@@ -108,6 +123,7 @@
             <section id="blog">
                 <h2>Blog</h2>
                 <div class="blog-list">
+                    <div class="blog-entry"><a href="blog/2026-08-20-hotdog-bench.html">Hotdog Bench</a><span class="post-date">August 20, 2026</span></div>
                     <div class="blog-entry"><a href="blog/2026-04-11-hello-world.html">Hello World</a><span class="post-date">April 11, 2026</span></div>
                 </div>
             </section>

@@ -12,19 +12,36 @@ Frontmatter (optional --- block at top of .md):
     title: My Post Title
     date: 2026-04-11
     desc: Optional OG description (auto-extracted if omitted).
-    image: https://optional-og-image.png
+    image: media/thing.png     # relative paths are made absolute
+    image_alt: Alt text for the share image (defaults to the title).
+    card: summary_large_image     # opt in to the big banner card
     ---
+
+Share images resolve in this order:
+    1. the frontmatter "image:" key
+    2. media/og/<slug>.(png|jpg|jpeg|webp), if present
+    3. DEFAULT_OG_IMAGE
+
+Every post gets the small horizontal card (thumbnail beside the text), which
+suits a square image. Add "card: summary_large_image" to a post to promote it
+to the full-width banner — that one wants a 1200x630 image.
 """
 
 import os
 import re
+import html
 import markdown
 from datetime import datetime
 
 BLOG_DIR = "blog"
 INDEX_HTML = "index.html"
 BASE_URL = "https://zmuda.dev"
-DEFAULT_OG_IMAGE = f"{BASE_URL}/media/headshot.png"
+AUTHOR = "Ryan Zmuda"
+SITE_NAME = "zmuda.dev"
+THEME_COLOR = "#1ba8b5"
+DEFAULT_OG_IMAGE = f"{BASE_URL}/media/headshot.jpg"
+OG_IMAGE_DIR = os.path.join("media", "og")
+OG_IMAGE_EXTS = ("png", "jpg", "jpeg", "webp")
 
 GTM_HEAD = """\
     <!-- Google Tag Manager -->
@@ -50,13 +67,16 @@ POST_TEMPLATE = """\
     <meta name="darkreader-lock">
     <meta name="color-scheme" content="dark">
     <title>{title} — Ryan Zmuda</title>
+    <meta name="theme-color" content="{theme_color}">
+    <meta property="og:site_name" content="{site_name}">
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{og_desc}">
     <meta property="og:image" content="{og_image}">
+    <meta property="og:image:alt" content="{og_image_alt}">
     <meta property="og:url" content="{BASE_URL}/blog/{slug}.html">
     <meta property="og:type" content="article">
-    <meta name="twitter:card" content="{twitter_card}">
-    <link rel="icon" type="image/png" sizes="32x32" href="../media/headshot.png">
+{article_meta}    <meta name="twitter:card" content="{twitter_card}">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="../media/headshot.jpg">
     <link rel="stylesheet" href="../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,13 +87,14 @@ POST_TEMPLATE = """\
 <body>
 {gtm_body}
     <div class="container">
-        <header>
+        <header class="post-header">
             <p class="back-link"><a href="/">← zmuda.dev</a></p>
         </header>
         <main>
             <article>
                 <h1 class="post-title">{title}</h1>
-                {date_line}
+                <div class="post-meta">
+{meta_lines}                </div>
                 <div class="post-content">
 {content}
                 </div>
@@ -118,18 +139,42 @@ def format_date(date_str):
 
 
 def extract_description(body, max_len=160):
-    """Pull plain text from the first non-empty paragraph for og:description."""
+    """Pull plain text from the first non-empty prose paragraph for og:description.
+
+    Media blocks (figures, embedded posts, scripts) are dropped whole so a post
+    that opens with an image still describes itself with real prose.
+    """
     clean = re.sub(r'```.*?```', '', body, flags=re.DOTALL)
+    for tag in ("figure", "blockquote", "script", "style", "figcaption"):
+        clean = re.sub(rf'<{tag}\b.*?</{tag}>', '', clean, flags=re.DOTALL | re.IGNORECASE)
+    clean = re.sub(r'<[^>]+>', ' ', clean)
     clean = re.sub(r'^#{1,6}\s+', '', clean, flags=re.MULTILINE)
     clean = re.sub(r'!\[.*?\]\(.*?\)', '', clean)
     clean = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', clean)
     clean = re.sub(r'`[^`]+`', '', clean)
     clean = re.sub(r'[*_]{1,2}([^*_]+)[*_]{1,2}', r'\1', clean)
+    clean = html.unescape(clean)
     for para in clean.split('\n\n'):
         text = ' '.join(para.split()).strip()
         if text:
             return text[:max_len].rstrip() + ('…' if len(text) > max_len else '')
     return ""
+
+
+def absolutize(url):
+    """Share images must be absolute URLs — scrapers do not resolve relative paths."""
+    if url.startswith(("http://", "https://", "//")):
+        return url
+    return f"{BASE_URL}/{url.lstrip('/')}"
+
+
+def find_slug_image(slug):
+    """Look for a per-post share image at media/og/<slug>.<ext>."""
+    for ext in OG_IMAGE_EXTS:
+        path = os.path.join(OG_IMAGE_DIR, f"{slug}.{ext}")
+        if os.path.exists(path):
+            return f"{BASE_URL}/{OG_IMAGE_DIR.replace(os.sep, '/')}/{slug}.{ext}"
+    return None
 
 
 def generate():
@@ -148,20 +193,38 @@ def generate():
         date_str     = meta.get("date", "")
         date_display = format_date(date_str) if date_str else ""
         og_desc      = meta.get("desc") or extract_description(body)
-        og_image     = meta.get("image") or DEFAULT_OG_IMAGE
-        twitter_card = "summary_large_image" if meta.get("image") else "summary"
 
-        html_body = markdown.markdown(body, extensions=["fenced_code", "tables"])
-        date_line = f'<p class="post-meta">{date_display}</p>' if date_display else ""
+        custom_image = meta.get("image") or find_slug_image(slug)
+        og_image     = absolutize(custom_image) if custom_image else DEFAULT_OG_IMAGE
+        og_image_alt = meta.get("image_alt") or title
+        # Small horizontal card by default; opt in per-post with "card: summary_large_image".
+        twitter_card = meta.get("card", "summary")
+
+        article_meta = ""
+        if date_str:
+            article_meta = f'    <meta property="article:published_time" content="{date_str}">\n'
+        article_meta += f'    <meta property="article:author" content="{AUTHOR}">\n'
+
+        html_body = markdown.markdown(body, extensions=["fenced_code", "tables", "attr_list"])
+
+        meta_parts = []
+        if date_display:
+            meta_parts.append(f'                    <p class="post-date-line">{date_display}</p>')
+        meta_parts.append(f'                    <p class="post-byline"><a href="/">{AUTHOR}</a></p>')
+        meta_lines = "\n".join(meta_parts) + "\n"
 
         output = POST_TEMPLATE.format(
-            title=title,
+            title=html.escape(title),
             slug=slug,
-            date_line=date_line,
+            meta_lines=meta_lines,
             content=html_body,
-            og_desc=og_desc,
-            og_image=og_image,
+            og_desc=html.escape(og_desc),
+            og_image=html.escape(og_image),
+            og_image_alt=html.escape(og_image_alt),
+            article_meta=article_meta,
             twitter_card=twitter_card,
+            site_name=SITE_NAME,
+            theme_color=THEME_COLOR,
             gtm_head=GTM_HEAD,
             gtm_body=GTM_BODY,
             BASE_URL=BASE_URL,
